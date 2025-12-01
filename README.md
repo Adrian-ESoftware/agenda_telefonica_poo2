@@ -281,5 +281,3 @@ java.util.logging.ConsoleHandler.level = FINE
 **Versão**: 1.0  
 **Autor**: Adrian  
 **Data**: Dezembro 2025  
-**Status**: ✅ Pronto para produção
-
