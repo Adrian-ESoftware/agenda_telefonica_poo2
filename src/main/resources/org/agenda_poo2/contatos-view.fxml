@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.agenda_poo2.ContatosController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- Título -->
+    <Label text="AGENDA DE CONTATOS" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+    <Separator/>
+
+    <!-- Painel de entrada de dados -->
+    <VBox spacing="10.0" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-padding: 10;">
+        <Label text="Informações do Contato" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+
+        <GridPane hgap="10.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints prefWidth="100"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <!-- Campo Nome -->
+            <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="tfNome" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <!-- Campo Telefone -->
+            <Label text="Telefone:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="tfTelefone" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <!-- Campo Email -->
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="tfEmail" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+
+        <!-- Botões de Ação -->
+        <HBox spacing="10.0">
+            <Button fx:id="btnAdicionar" text="Adicionar Contato" style="-fx-font-size: 12; -fx-padding: 8;" onAction="#onAdicionarContato"/>
+            <Button fx:id="btnEditar" text="Editar Contato" style="-fx-font-size: 12; -fx-padding: 8;" onAction="#onEditarContato"/>
+            <Button fx:id="btnExcluir" text="Excluir Contato" style="-fx-font-size: 12; -fx-padding: 8;" onAction="#onExcluirContato"/>
+            <Button fx:id="btnLimpar" text="Limpar" style="-fx-font-size: 12; -fx-padding: 8;" onAction="#onLimpar"/>
+        </HBox>
+    </VBox>
+
+    <Separator/>
+
+    <!-- Painel de listagem -->
+    <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+        <Label text="Lista de Contatos" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+
+        <TableView fx:id="tabelaContatos" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNome" text="Nome" prefWidth="200"/>
+                <TableColumn fx:id="colTelefone" text="Telefone" prefWidth="150"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="250"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <Label fx:id="lblStatus" text="Pronto" style="-fx-text-fill: #0066cc;"/>
+</VBox>
+
